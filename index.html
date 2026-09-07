@@ -1,400 +1,1433 @@
 <!doctype html>
-<html lang="en">
+<html lang="en-US">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Morad Chehresay — Software Developer specializing in PHP, Python, WordPress, custom CMS, web applications and business software.">
-    <meta name="author" content="Morad Chehresay">
-    <title>Morad Chehresay — Software Developer</title>
-    <link rel="stylesheet" href="style.css">
-    
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
+    <title>Morad Chehresay - Senior Full-Stack Developer &amp; WordPress Expert</title>
+    <meta name="description" content="Senior Full-Stack Developer with 12+ years of experience. WordPress Expert, PHP & Python Developer, custom CMS and business software specialist." />
+    <link rel="profile" href="https://gmpg.org/xfn/11" />
+
+    <!-- Google Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" />
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+    <style>
+        /* ----------------------------------------------
+                    RESET & BASE STYLES
+                ------------------------------------------------ */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #50a3a2 0%, #78cc6d 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 40px 20px;
+            color: #333;
+            line-height: 1.7;
+        }
+
+        .container {
+            max-width: 1200px;
+            width: 100%;
+            background: #ffffff;
+            border-radius: 30px;
+            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.2);
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* ----------------------------------------------
+                    SIDEBAR
+                ------------------------------------------------ */
+        .sidebar {
+            background: #ffffff;
+            padding: 45px 25px 35px;
+            text-align: center;
+            border-right: 1px solid rgba(0, 0, 0, 0.05);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .profile-image {
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-bottom: 20px;
+            border: 5px solid #78cc6d;
+            box-shadow: 0 10px 30px rgba(120, 204, 109, 0.25);
+            flex-shrink: 0;
+            background: #e8f5e9;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .profile-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .sidebar h1 {
+            font-size: 26px;
+            font-weight: 700;
+            color: #1e1e1e;
+            margin-bottom: 2px;
+            letter-spacing: -0.5px;
+        }
+
+        .sidebar .subtitle {
+            color: #78cc6d;
+            font-size: 15px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            min-height: 28px;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            background: #f5f7fb;
+            color: #555;
+            font-size: 18px;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .social-links a:hover {
+            background: #78cc6d;
+            color: #ffffff;
+            transform: translateY(-3px);
+        }
+
+        .btn-group {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            width: 100%;
+            max-width: 220px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 20px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 14px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+            text-align: center;
+            letter-spacing: 0.3px;
+        }
+
+        .btn-primary {
+            background: #78cc6d;
+            color: #fff;
+        }
+        .btn-primary:hover {
+            background: transparent;
+            border-color: #78cc6d;
+            color: #78cc6d;
+        }
+
+        .btn-outline {
+            background: transparent;
+            border-color: #78cc6d;
+            color: #78cc6d;
+        }
+        .btn-outline:hover {
+            background: #78cc6d;
+            color: #fff;
+        }
+
+        .btn i {
+            margin-right: 8px;
+        }
+
+        /* ----------------------------------------------
+                    MAIN CONTENT
+                ------------------------------------------------ */
+        .main-content {
+            padding: 45px 40px 40px;
+            background: #ffffff;
+            max-height: 850px;
+            overflow-y: auto;
+        }
+
+        .main-content::-webkit-scrollbar {
+            width: 6px;
+        }
+        .main-content::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 10px;
+        }
+        .main-content::-webkit-scrollbar-thumb {
+            background: #78cc6d;
+            border-radius: 10px;
+        }
+
+        .section {
+            margin-bottom: 55px;
+        }
+
+        .section-title {
+            font-size: 26px;
+            font-weight: 700;
+            color: #1e1e1e;
+            margin-bottom: 28px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -6px;
+            width: 45px;
+            height: 4px;
+            background: #78cc6d;
+            border-radius: 10px;
+        }
+
+        .section-title .highlight {
+            color: #78cc6d;
+        }
+
+        .section-intro {
+            font-size: 15px;
+            color: #666;
+            margin-bottom: 30px;
+            max-width: 700px;
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .grid-4 {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .card-item {
+            background: #f9fbfd;
+            padding: 25px 20px 20px;
+            border-radius: 18px;
+            transition: all 0.3s ease;
+            border: 1px solid #edf2f7;
+        }
+
+        .card-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(120, 204, 109, 0.12);
+            border-color: #78cc6d;
+        }
+
+        .card-item .icon {
+            font-size: 34px;
+            color: #78cc6d;
+            margin-bottom: 12px;
+        }
+
+        .card-item h3 {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .card-item p {
+            font-size: 14px;
+            color: #666;
+            line-height: 1.6;
+        }
+
+        /* ----------------------------------------------
+                    FEATURED PROJECTS (REAL PROJECTS)
+                ------------------------------------------------ */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 25px;
+            margin-top: 10px;
+        }
+
+        .project-card {
+            background: #f9fbfd;
+            padding: 28px 22px 24px;
+            border-radius: 18px;
+            border: 1px solid #edf2f7;
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+
+        .project-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 15px 35px rgba(120, 204, 109, 0.12);
+            border-color: #78cc6d;
+        }
+
+        .project-card .project-icon {
+            font-size: 42px;
+            color: #78cc6d;
+            margin-bottom: 12px;
+        }
+
+        .project-card h3 {
+            font-size: 19px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: #1e1e1e;
+        }
+
+        .project-card p {
+            font-size: 14px;
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 14px;
+            min-height: 44px;
+        }
+
+        .project-tags {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 6px;
+            margin-bottom: 16px;
+        }
+
+        .project-tags span {
+            background: #e8f5e9;
+            color: #2e7d32;
+            padding: 3px 14px;
+            border-radius: 30px;
+            font-size: 12px;
+            font-weight: 500;
+            border: 1px solid #c8e6c9;
+        }
+
+        .project-card .btn {
+            display: inline-block;
+            padding: 8px 24px;
+            background: #78cc6d;
+            color: #fff;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 13px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border: 2px solid #78cc6d;
+        }
+
+        .project-card .btn:hover {
+            background: transparent;
+            color: #78cc6d;
+        }
+
+        /* ----------------------------------------------
+                    PROJECT SCREENSHOTS
+                ------------------------------------------------ */
+        .project-screenshots {
+            display: flex;
+            gap: 6px;
+            margin: 10px 0 14px;
+            justify-content: center;
+        }
+
+        .project-screenshots a {
+            width: 48%;
+            height: 60px;
+        }
+
+        .project-screenshots img {
+            width: 100%;
+            height: 60px;
+            object-fit: cover;
+            border-radius: 8px;
+            border: 2px solid #edf2f7;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .project-screenshots img:hover {
+            border-color: #78cc6d;
+            transform: scale(1.05);
+            box-shadow: 0 4px 15px rgba(120, 204, 109, 0.25);
+        }
+
+        /* ----------------------------------------------
+                    PORTFOLIO / PROJECTS
+                ------------------------------------------------ */
+        .filters {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 30px;
+        }
+
+        .filter {
+            background: transparent;
+            border: 2px solid #e8ecf1;
+            padding: 8px 22px;
+            border-radius: 30px;
+            font-size: 14px;
+            font-weight: 500;
+            color: #555;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .filter:hover {
+            border-color: #78cc6d;
+            color: #78cc6d;
+        }
+
+        .filter.active {
+            background: #78cc6d;
+            border-color: #78cc6d;
+            color: #fff;
+        }
+
+        .project-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 25px;
+        }
+
+        .project {
+            background: #f9fbfd;
+            border-radius: 18px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            border: 1px solid #edf2f7;
+        }
+
+        .project:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 15px 35px rgba(120, 204, 109, 0.12);
+            border-color: #78cc6d;
+        }
+
+        .project-image {
+            height: 140px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            color: #fff;
+        }
+
+        .project-cms { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); }
+        .project-wordpress { background: linear-gradient(135deg, #21759b 0%, #1a4b6d 100%); }
+        .project-crm { background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); }
+        .project-app { background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); }
+        .project-api { background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%); }
+        .project-commerce { background: linear-gradient(135deg, #fa709a 0%, #fee140 100%); }
+
+        .project-content {
+            padding: 20px 22px 24px;
+        }
+
+        .project-content span {
+            font-size: 13px;
+            color: #78cc6d;
+            font-weight: 500;
+            display: block;
+            margin-bottom: 4px;
+        }
+
+        .project-content h3 {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 6px;
+            color: #1e1e1e;
+        }
+
+        .project-content p {
+            font-size: 14px;
+            color: #666;
+            line-height: 1.5;
+            margin: 0;
+        }
+
+        .project-hidden {
+            display: none !important;
+        }
+
+        /* ----------------------------------------------
+                    SKILLS
+                ------------------------------------------------ */
+        .skills-layout {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 30px;
+        }
+
+        .skills-layout h3 {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 18px;
+            color: #1e1e1e;
+        }
+
+        .skills-layout h3 i {
+            color: #78cc6d;
+            margin-right: 10px;
+        }
+
+        .skill {
+            margin-bottom: 16px;
+        }
+
+        .skill-head {
+            display: flex;
+            justify-content: space-between;
+            font-size: 14px;
+            font-weight: 500;
+            margin-bottom: 4px;
+        }
+
+        .skill-head strong {
+            color: #78cc6d;
+            font-weight: 600;
+            font-size: 13px;
+        }
+
+        .skill-bar {
+            width: 100%;
+            height: 8px;
+            background: #e9ecef;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .skill-bar span {
+            display: block;
+            height: 100%;
+            background: #78cc6d;
+            border-radius: 10px;
+            width: var(--value, 0%);
+            transition: width 0.8s ease;
+        }
+
+        .check-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .check-list li {
+            padding: 6px 0 6px 28px;
+            position: relative;
+            font-size: 14px;
+            color: #444;
+            border-bottom: 1px dashed #f0f0f0;
+        }
+
+        .check-list li:last-child {
+            border-bottom: none;
+        }
+
+        .check-list li::before {
+            content: '\f00c';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            color: #78cc6d;
+            position: absolute;
+            left: 0;
+            top: 6px;
+            font-size: 14px;
+        }
+
+        .technology-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid #f0f0f0;
+        }
+
+        .technology-tags span {
+            background: #e8f5e9;
+            color: #2e7d32;
+            padding: 6px 18px;
+            border-radius: 30px;
+            font-size: 13px;
+            font-weight: 500;
+            border: 1px solid #c8e6c9;
+            transition: all 0.3s ease;
+        }
+
+        .technology-tags span:hover {
+            background: #78cc6d;
+            color: #fff;
+            border-color: #78cc6d;
+            transform: translateY(-2px);
+            cursor: default;
+        }
+
+        /* ----------------------------------------------
+                    RESUME / TIMELINE
+                ------------------------------------------------ */
+        .resume-item {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 28px;
+            padding-bottom: 28px;
+            border-bottom: 1px dashed #e8ecf1;
+        }
+
+        .resume-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .resume-date {
+            min-width: 130px;
+            font-weight: 600;
+            color: #78cc6d;
+            font-size: 15px;
+        }
+
+        .resume-detail h4 {
+            font-size: 18px;
+            font-weight: 600;
+        }
+
+        .resume-detail .company {
+            color: #888;
+            font-size: 14px;
+            margin-bottom: 4px;
+        }
+
+        .resume-detail p {
+            font-size: 14px;
+            color: #666;
+            margin-top: 4px;
+        }
+
+        /* ----------------------------------------------
+                    WHY WORK WITH ME
+                ------------------------------------------------ */
+        .why-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+            margin-top: 10px;
+        }
+
+        .why-item {
+            background: #f9fbfd;
+            padding: 22px 24px;
+            border-radius: 18px;
+            border-left: 4px solid #78cc6d;
+            transition: all 0.3s ease;
+        }
+
+        .why-item:hover {
+            transform: translateX(6px);
+            box-shadow: 0 8px 25px rgba(120, 204, 109, 0.12);
+        }
+
+        .why-item h4 {
+            font-size: 17px;
+            font-weight: 600;
+            margin-bottom: 6px;
+            color: #1e1e1e;
+        }
+
+        .why-item p {
+            font-size: 14px;
+            color: #666;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        /* ----------------------------------------------
+                    CONTACT
+                ------------------------------------------------ */
+        .contact-info {
+            list-style: none;
+            font-size: 15px;
+            line-height: 2.4;
+        }
+
+        .contact-info li i {
+            color: #78cc6d;
+            width: 28px;
+            margin-right: 6px;
+        }
+
+        .contact-info li a {
+            color: #333;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .contact-info li a:hover {
+            color: #78cc6d;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 12px 18px;
+            border: 1px solid #e0e4e9;
+            border-radius: 14px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 14px;
+            transition: all 0.3s ease;
+            background: #f9fbfd;
+            margin-bottom: 14px;
+        }
+
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+            outline: none;
+            border-color: #78cc6d;
+            box-shadow: 0 0 0 4px rgba(120, 204, 109, 0.15);
+            background: #fff;
+        }
+
+        .contact-form textarea {
+            min-height: 130px;
+            resize: vertical;
+        }
+
+        .btn-submit {
+            background: #78cc6d;
+            color: #fff;
+            border: none;
+            padding: 13px 40px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .btn-submit:hover {
+            background: #5fb854;
+            transform: scale(1.02);
+            box-shadow: 0 8px 20px rgba(120, 204, 109, 0.3);
+        }
+
+        /* ----------------------------------------------
+                    FOOTER
+                ------------------------------------------------ */
+        .footer {
+            text-align: center;
+            padding: 25px 0 5px;
+            border-top: 1px solid #f0f0f0;
+            margin-top: 20px;
+            font-size: 14px;
+            color: #888;
+        }
+
+        .footer a {
+            color: #78cc6d;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .footer i {
+            color: #78cc6d;
+        }
+
+        /* ----------------------------------------------
+                    HERO / ABOUT ENHANCED
+                ------------------------------------------------ */
+        .hero-text {
+            font-size: 16px;
+            color: #444;
+            margin-bottom: 20px;
+            line-height: 1.8;
+        }
+
+        .hero-highlight {
+            background: linear-gradient(120deg, rgba(120, 204, 109, 0.15) 0%, rgba(120, 204, 109, 0.05) 100%);
+            padding: 20px 24px;
+            border-radius: 14px;
+            border-left: 4px solid #78cc6d;
+            margin: 18px 0;
+        }
+
+        .hero-highlight strong {
+            color: #78cc6d;
+        }
+
+        /* ----------------------------------------------
+                    RESPONSIVE
+                ------------------------------------------------ */
+        @media (max-width: 992px) {
+            .container {
+                grid-template-columns: 1fr;
+            }
+            .sidebar {
+                border-right: none;
+                border-bottom: 1px solid #f0f0f0;
+                padding: 35px 20px;
+            }
+            .profile-image {
+                width: 140px;
+                height: 140px;
+            }
+            .main-content {
+                padding: 35px 25px;
+                max-height: none;
+                overflow-y: visible;
+            }
+            .grid-2,
+            .grid-3,
+            .grid-4 {
+                grid-template-columns: 1fr 1fr;
+            }
+            .project-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+            .projects-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+            .skills-layout {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            .why-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .grid-2,
+            .grid-3,
+            .grid-4 {
+                grid-template-columns: 1fr;
+            }
+            .project-grid {
+                grid-template-columns: 1fr;
+            }
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+            .why-grid {
+                grid-template-columns: 1fr;
+            }
+            .resume-item {
+                flex-direction: column;
+                gap: 6px;
+            }
+            .main-content {
+                padding: 25px 18px;
+            }
+            .sidebar {
+                padding: 30px 15px;
+            }
+            .section-title {
+                font-size: 22px;
+            }
+            .btn-group {
+                max-width: 100%;
+            }
+            .skills-layout {
+                grid-template-columns: 1fr;
+            }
+            .filters {
+                gap: 6px;
+            }
+            .filter {
+                padding: 6px 16px;
+                font-size: 13px;
+            }
+        }
+    </style>
 </head>
 <body>
-    <div class="page-shell">
+    <div class="container">
 
-        <aside class="profile-card">
-            <div class="profile-cover"></div>
+        <!-- ===== SIDEBAR ===== -->
+        <aside class="sidebar">
+            <div class="profile-image">
+                <img src="pic.jpeg" alt="Morad Chehresay" style="width:100%; height:100%; object-fit:cover;">
+            </div>
+            <h1>Morad Chehresay</h1>
+            <div class="subtitle">Senior Full-Stack Developer · 12+ Years</div>
 
-            <div class="profile-content">
-                <div class="profile-photo">
-                    <img src="profile.jpg" alt="Morad Chehresay">
-                </div>
+            <div class="social-links">
+                <a href="https://github.com/chehresay" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                <a href="https://linkedin.com/in/chehresay" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://t.me/chehresay" target="_blank" aria-label="Telegram"><i class="fab fa-telegram-plane"></i></a>
+                <a href="https://wa.me/989117040969" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                <a href="mailto:chehresay@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+            </div>
 
-                <h1>Morad Chehresay</h1>
-                <p class="profile-role">Software Developer</p>
-                <p class="profile-specialty">PHP · Python · Web · CMS · Custom Software</p>
-
-                <div class="social-links">
-                    <a href="https://github.com/chehresay" target="_blank" rel="noopener" aria-label="GitHub">GH</a>
-                    <a href="https://linkedin.com/in/chehresay" target="_blank" rel="noopener" aria-label="LinkedIn">in</a>
-                    <a href="https://t.me/chehresay" target="_blank" rel="noopener" aria-label="Telegram">TG</a>
-                    <a href="https://wa.me/989117040969" target="_blank" rel="noopener" aria-label="WhatsApp">WA</a>
-                </div>
-
-                <div class="profile-info">
-                    <div><span>Focus</span><strong>Software & Web</strong></div>
-                    <div><span>Specialty</span><strong>PHP / Python</strong></div>
-                    <div><span>WordPress</span><strong>Custom Development</strong></div>
-                    <div><span>Work</span><strong>Remote</strong></div>
-                </div>
-
-                <a class="button button-primary full-width" href="mailto:chehresay@gmail.com">Let's Work Together</a>
+            <div class="btn-group">
+                <a href="#" class="btn btn-primary" id="downloadCvBtn"><i class="fas fa-download"></i> Download CV</a>
+                <a href="#contact" class="btn btn-outline"><i class="fas fa-paper-plane"></i> Contact Me</a>
             </div>
         </aside>
 
-        <div class="main-column">
-            <nav class="top-navigation" aria-label="Main navigation">
-                <a class="active" href="#about">About</a>
-                <a href="#services">Services</a>
-                <a href="#resume">Resume</a>
-                <a href="#skills">Skills</a>
-                <a href="#portfolio">Portfolio</a>
-                <a href="#contact">Contact</a>
-            </nav>
+        <!-- ===== MAIN CONTENT ===== -->
+        <main class="main-content">
 
-            <main>
-                <section class="card hero-section" id="about">
-                    <p class="eyebrow">SOFTWARE DEVELOPER · AVAILABLE FOR REMOTE COLLABORATION</p>
-                    <h2>Building practical software, scalable web systems and custom digital products.</h2>
+            <!-- ===== ABOUT / HERO ===== -->
+            <section class="section" id="about">
+                <h2 class="section-title"><span class="highlight">About</span> Me</h2>
 
-                    <p class="hero-text">
-                        I'm Morad Chehresay, a software developer focused on PHP and Python,
-                        modern web development, WordPress engineering and custom business software.
-                        I enjoy building systems from the ground up — from the database and backend
-                        to the admin panel, APIs and user interface.
+                <p class="hero-text">
+                    <strong>Hello! I'm Morad Chehresay.</strong><br />
+                    I'm a Senior Full-Stack Developer with <strong>12+ years of experience</strong> in designing, building, and scaling complex software systems. I specialize in <strong>PHP, WordPress, Python, and modern web technologies</strong>.
+                </p>
+
+                <div class="hero-highlight">
+                    <p style="margin:0; font-size:15px;">
+                        <strong>I don't just write code — I build solutions.</strong> From custom CMS platforms and WordPress frameworks to business systems and API integrations, I deliver <strong>practical, maintainable, and scalable software</strong> that solves real problems and evolves with your business.
                     </p>
+                </div>
 
-                    <p>
-                        My work combines product thinking with hands-on engineering. I build custom
-                        CMS platforms, WordPress themes and plugins, administration panels, CRM-style
-                        systems, web applications, Android applications and desktop software.
-                    </p>
-
-                    <div class="hero-actions">
-                        <a class="button button-primary" href="#portfolio">View My Work</a>
-                        <a class="button button-secondary" href="mailto:chehresay@gmail.com">Contact Me</a>
+                <div class="grid-2" style="margin-top: 20px;">
+                    <div>
+                        <p>
+                            My approach combines <strong>technical excellence</strong> with <strong>product thinking</strong>. I understand that great software isn't just about clean code — it's about understanding the problem, designing the right architecture, and delivering a solution that works.
+                        </p>
+                        <br />
+                        <p>
+                            Whether it's a <strong>custom CMS</strong>, a <strong>WordPress plugin</strong>, a <strong>CRM system</strong>, or a <strong>mobile application</strong>, I focus on building <strong>modular, future-ready systems</strong> that your team will actually enjoy using and maintaining.
+                        </p>
                     </div>
-                </section>
-
-                <section class="card" id="services">
-                    <h2 class="section-title">What I Can Build</h2>
-
-                    <div class="service-grid">
-                        <article class="service">
-                            <span class="service-icon">&lt;/&gt;</span>
-                            <h3>Web Applications</h3>
-                            <p>
-                                Custom PHP and Python web applications with structured backend logic,
-                                responsive interfaces, database integration and APIs.
-                            </p>
-                        </article>
-
-                        <article class="service">
-                            <span class="service-icon">WP</span>
-                            <h3>WordPress Engineering</h3>
-                            <p>
-                                Custom themes, plugins, settings frameworks, admin interfaces,
-                                AJAX features, WooCommerce integrations and performance-focused solutions.
-                            </p>
-                        </article>
-
-                        <article class="service">
-                            <span class="service-icon">CMS</span>
-                            <h3>Custom CMS & Admin Panels</h3>
-                            <p>
-                                Modular content management systems and administration panels designed
-                                around the actual workflow of a business.
-                            </p>
-                        </article>
-
-                        <article class="service">
-                            <span class="service-icon">CRM</span>
-                            <h3>Business Systems</h3>
-                            <p>
-                                CRM-style systems, ticketing, reservations, dashboards, automation,
-                                customer workflows and internal business tools.
-                            </p>
-                        </article>
-
-                        <article class="service">
-                            <span class="service-icon">APP</span>
-                            <h3>Mobile & Desktop</h3>
-                            <p>
-                                Android applications and desktop software, including integrations
-                                between applications, APIs and business databases.
-                            </p>
-                        </article>
-
-                        <article class="service">
-                            <span class="service-icon">API</span>
-                            <h3>API & Integrations</h3>
-                            <p>
-                                REST APIs and integrations with external services, Firebase,
-                                Supabase, payment/service APIs and real-time communication tools.
-                            </p>
-                        </article>
-                    </div>
-                </section>
-
-                <section class="card" id="resume">
-                    <h2 class="section-title">Experience & Approach</h2>
-
-                    <div class="timeline">
-                        <article class="timeline-item">
-                            <span class="timeline-date">CURRENT</span>
-                            <h3>Independent Software Development</h3>
-                            <p class="timeline-company">Web · CMS · WordPress · Business Software</p>
-                            <p>
-                                Designing and developing custom software products, WordPress
-                                extensions, CMS platforms, administration systems and integrations.
-                            </p>
-                        </article>
-
-                        <article class="timeline-item">
-                            <span class="timeline-date">ONGOING</span>
-                            <h3>Custom WordPress Engineering</h3>
-                            <p class="timeline-company">Themes · Plugins · Admin Frameworks</p>
-                            <p>
-                                Building modular settings frameworks, custom fields, repeaters,
-                                media interfaces, AJAX workflows, WooCommerce features and
-                                reusable WordPress components.
-                            </p>
-                        </article>
-
-                        <article class="timeline-item">
-                            <span class="timeline-date">ONGOING</span>
-                            <h3>Product & Business Systems</h3>
-                            <p class="timeline-company">CMS · CRM · Dashboards · Automation</p>
-                            <p>
-                                Developing systems that connect frontend interfaces, backend logic,
-                                databases, APIs and operational workflows into one maintainable product.
-                            </p>
-                        </article>
-                    </div>
-                </section>
-
-                <section class="card" id="skills">
-                    <h2 class="section-title">Technical Skills</h2>
-
-                    <div class="skills-layout">
-                        <div>
-                            <h3>Languages & Core Technologies</h3>
-
-                            <div class="skill">
-                                <div class="skill-head"><span>PHP</span><strong>Advanced</strong></div>
-                                <div class="skill-bar"><span style="--value:95%"></span></div>
-                            </div>
-
-                            <div class="skill">
-                                <div class="skill-head"><span>HTML / CSS</span><strong>Advanced</strong></div>
-                                <div class="skill-bar"><span style="--value:95%"></span></div>
-                            </div>
-
-                            <div class="skill">
-                                <div class="skill-head"><span>JavaScript / jQuery</span><strong>Advanced</strong></div>
-                                <div class="skill-bar"><span style="--value:88%"></span></div>
-                            </div>
-
-                            <div class="skill">
-                                <div class="skill-head"><span>Python</span><strong>Strong</strong></div>
-                                <div class="skill-bar"><span style="--value:82%"></span></div>
-                            </div>
-
-                            <div class="skill">
-                                <div class="skill-head"><span>MySQL / MariaDB</span><strong>Strong</strong></div>
-                                <div class="skill-bar"><span style="--value:90%"></span></div>
-                            </div>
+                    <div>
+                        <ul style="list-style: none; font-size: 15px;">
+                            <li><strong>Experience:</strong> 12+ Years</li>
+                            <li><strong>Residence:</strong> Iran</li>
+                            <li><strong>Freelance:</strong> Available</li>
+                            <li><strong>Remote:</strong> Worldwide</li>
+                            <li><strong>Languages:</strong> Persian, English</li>
+                            <li><strong>Projects:</strong> 80+ Delivered</li>
+                        </ul>
+                        <br />
+                        <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+                            <span style="background:#e8f5e9; color:#2e7d32; padding:4px 14px; border-radius:20px; font-size:13px; border:1px solid #c8e6c9;">PHP</span>
+                            <span style="background:#e8f5e9; color:#2e7d32; padding:4px 14px; border-radius:20px; font-size:13px; border:1px solid #c8e6c9;">WordPress</span>
+                            <span style="background:#e8f5e9; color:#2e7d32; padding:4px 14px; border-radius:20px; font-size:13px; border:1px solid #c8e6c9;">Python</span>
+                            <span style="background:#e8f5e9; color:#2e7d32; padding:4px 14px; border-radius:20px; font-size:13px; border:1px solid #c8e6c9;">JavaScript</span>
+                            <span style="background:#e8f5e9; color:#2e7d32; padding:4px 14px; border-radius:20px; font-size:13px; border:1px solid #c8e6c9;">React</span>
+                            <span style="background:#e8f5e9; color:#2e7d32; padding:4px 14px; border-radius:20px; font-size:13px; border:1px solid #c8e6c9;">Node.js</span>
+                            <span style="background:#e8f5e9; color:#2e7d32; padding:4px 14px; border-radius:20px; font-size:13px; border:1px solid #c8e6c9;">.NET</span>
+                            <span style="background:#e8f5e9; color:#2e7d32; padding:4px 14px; border-radius:20px; font-size:13px; border:1px solid #c8e6c9;">Android</span>
                         </div>
+                    </div>
+                </div>
+            </section>
 
-                        <div>
-                            <h3>Platforms & Development</h3>
-                            <ul class="check-list">
-                                <li>WordPress theme & plugin development</li>
-                                <li>Custom CMS and admin panels</li>
-                                <li>REST APIs, AJAX and integrations</li>
-                                <li>WooCommerce development</li>
-                                <li>Android application development</li>
-                                <li>Desktop software development / .NET</li>
-                                <li>Firebase and Supabase integrations</li>
-                                <li>WebRTC / Jitsi integrations</li>
-                                <li>Server administration and hosting environments</li>
-                                <li>Responsive UI with HTML, CSS and JavaScript</li>
-                            </ul>
+            <!-- ===== SERVICES ===== -->
+            <section class="section" id="services">
+                <h2 class="section-title">What I <span class="highlight">Build</span></h2>
+                <div class="grid-3">
+                    <div class="card-item">
+                        <div class="icon"><i class="fas fa-code"></i></div>
+                        <h3>Web Applications</h3>
+                        <p>Custom PHP and Python web applications with structured backend logic, responsive interfaces, database integration and APIs.</p>
+                    </div>
+                    <div class="card-item">
+                        <div class="icon"><i class="fab fa-wordpress"></i></div>
+                        <h3>WordPress Engineering</h3>
+                        <p>Custom themes, plugins, settings frameworks, admin interfaces, AJAX features, WooCommerce integrations and performance-focused solutions.</p>
+                    </div>
+                    <div class="card-item">
+                        <div class="icon"><i class="fas fa-database"></i></div>
+                        <h3>Custom CMS &amp; Admin Panels</h3>
+                        <p>Modular content management systems and administration panels designed around the actual workflow of a business.</p>
+                    </div>
+                    <div class="card-item">
+                        <div class="icon"><i class="fas fa-building"></i></div>
+                        <h3>Business Systems</h3>
+                        <p>CRM-style systems, ticketing, reservations, dashboards, automation, customer workflows and internal business tools.</p>
+                    </div>
+                    <div class="card-item">
+                        <div class="icon"><i class="fas fa-mobile-alt"></i></div>
+                        <h3>Mobile &amp; Desktop</h3>
+                        <p>Android applications and desktop software, including integrations between applications, APIs and business databases.</p>
+                    </div>
+                    <div class="card-item">
+                        <div class="icon"><i class="fas fa-plug"></i></div>
+                        <h3>API &amp; Integrations</h3>
+                        <p>REST APIs and integrations with external services, Firebase, Supabase, payment/service APIs and real-time communication tools.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ===== FEATURED PROJECTS (REAL PROJECTS) ===== -->
+            <section class="section" id="featured">
+                <h2 class="section-title"><span class="highlight">Featured</span> Projects</h2>
+                <p class="section-intro">
+                    A showcase of real-world projects I've designed and developed — from complex e-commerce platforms and specialized marketplaces to innovative mobile applications.
+                </p>
+
+                <div class="projects-grid">
+                    <!-- SM-CMS -->
+                    <div class="project-card">
+                        <div class="project-icon"><i class="fas fa-cogs"></i></div>
+                        <h3>SM-CMS</h3>
+                        <p><strong>Custom CMS built from scratch with PHP</strong> — from blogs and portfolios to e-commerce</p>
+                        <div class="project-tags">
+                            <span>PHP</span>
+                            <span>MySQL</span>
+                            <span>JavaScript</span>
+                            <span>CMS</span>
+                        </div>
+                        <div class="project-screenshots">
+                            <a href="screenshot-1.webp" target="_blank"><img src="screenshot-1.webp" alt="SM-CMS Dashboard" loading="lazy"></a>
+                            <a href="screenshot-2.webp" target="_blank"><img src="screenshot-2.webp" alt="SM-CMS Content Manager" loading="lazy"></a>
                         </div>
                     </div>
 
-                    <div class="technology-tags">
-                        <span>PHP</span><span>Python</span><span>JavaScript</span>
-                        <span>HTML</span><span>CSS</span><span>MySQL</span>
-                        <span>MariaDB</span><span>WordPress</span><span>WooCommerce</span>
-                        <span>Android</span><span>.NET</span><span>Firebase</span>
-                        <span>Supabase</span><span>REST API</span><span>AJAX</span>
-                        <span>Git</span><span>Linux</span>
-                    </div>
-                </section>
-
-                <section class="card" id="portfolio">
-                    <h2 class="section-title">Selected Work</h2>
-
-                    <p class="section-intro">
-                        A selection of the kinds of systems and products I develop. The portfolio
-                        is intentionally focused on engineering capability rather than decorative mockups.
-                    </p>
-
-                    <div class="filters" role="tablist">
-                        <button class="filter active" data-filter="all">All</button>
-                        <button class="filter" data-filter="web">Web</button>
-                        <button class="filter" data-filter="wordpress">WordPress</button>
-                        <button class="filter" data-filter="software">Software</button>
-                        <button class="filter" data-filter="app">Apps</button>
+                    <!-- ZenBTC -->
+                    <div class="project-card">
+                        <div class="project-icon"><i class="fas fa-robot"></i></div>
+                        <h3>ZenBTC</h3>
+                        <p>Professional Bitcoin Trading Bot with Advanced 5-Indicator Strategy</p>
+                        <div class="project-tags"><span>Python</span><span>Eel</span><span>Trading</span></div>
+                        <a href="https://github.com/chehresay/zen-btc-bot" target="_blank" class="btn">View Project</a>
                     </div>
 
-                    <div class="project-grid">
-                        <article class="project" data-category="web">
-                            <div class="project-image project-cms">CMS</div>
-                            <div class="project-content">
-                                <span>Web · PHP</span>
-                                <h3>Custom CMS Platform</h3>
-                                <p>Modular content management and administration architecture.</p>
-                            </div>
-                        </article>
-
-                        <article class="project" data-category="wordpress">
-                            <div class="project-image project-wordpress">WP</div>
-                            <div class="project-content">
-                                <span>WordPress · PHP</span>
-                                <h3>Settings Framework</h3>
-                                <p>Reusable settings, fields, repeaters, media and admin components.</p>
-                            </div>
-                        </article>
-
-                        <article class="project" data-category="software">
-                            <div class="project-image project-crm">CRM</div>
-                            <div class="project-content">
-                                <span>Business Software</span>
-                                <h3>CRM & Business Systems</h3>
-                                <p>Custom workflows, dashboards, tickets and operational tools.</p>
-                            </div>
-                        </article>
-
-                        <article class="project" data-category="app">
-                            <div class="project-image project-app">APP</div>
-                            <div class="project-content">
-                                <span>Android · Cordova</span>
-                                <h3>Mobile Applications</h3>
-                                <p>Mobile applications connected to backend services and APIs.</p>
-                            </div>
-                        </article>
-
-                        <article class="project" data-category="web">
-                            <div class="project-image project-api">API</div>
-                            <div class="project-content">
-                                <span>API · Integration</span>
-                                <h3>Service Integrations</h3>
-                                <p>External APIs, Firebase, Supabase and real-time communication.</p>
-                            </div>
-                        </article>
-
-                        <article class="project" data-category="wordpress">
-                            <div class="project-image project-commerce">SHOP</div>
-                            <div class="project-content">
-                                <span>WordPress · WooCommerce</span>
-                                <h3>Commerce Solutions</h3>
-                                <p>Custom WooCommerce features and product administration workflows.</p>
-                            </div>
-                        </article>
+                    <!-- Persian Framework -->
+                    <div class="project-card">
+                        <div class="project-icon"><i class="fab fa-wordpress"></i></div>
+                        <h3>Persian Framework</h3>
+                        <p>Advanced WordPress Options Framework with 40+ Professional Fields</p>
+                        <div class="project-tags"><span>WordPress</span><span>PHP</span><span>Framework</span></div>
+                        <a href="https://github.com/chehresay/persian-framework" target="_blank" class="btn">View Project</a>
                     </div>
-                </section>
 
-                <section class="card why-section">
-                    <h2 class="section-title">Why Work With Me?</h2>
+                    <!-- Cordova Pro GUI -->
+                    <div class="project-card">
+                        <div class="project-icon"><i class="fas fa-mobile-alt"></i></div>
+                        <h3>Cordova Pro GUI</h3>
+                        <p>Professional Cordova Project Management Tool with Modern UI</p>
+                        <div class="project-tags"><span>Python</span><span>Eel</span><span>Cordova</span></div>
+                        <a href="https://github.com/chehresay/cordova-pro-gui" target="_blank" class="btn">View Project</a>
+                    </div>
 
-                    <div class="why-grid">
-                        <div>
-                            <h3>Built from the ground up</h3>
-                            <p>
-                                I prefer understanding the problem first and building the right
-                                architecture instead of forcing every project into an existing template.
-                            </p>
+                    <!-- AmlakMal (Real Estate Platform) -->
+                    <div class="project-card">
+                        <div class="project-icon"><i class="fas fa-home"></i></div>
+                        <h3>AmlakMal</h3>
+                        <p>Complete real estate marketplace — buy, sell, and rent properties across Iran</p>
+                        <div class="project-tags"><span>PHP</span><span>WordPress</span><span>Real Estate</span></div>
+                        <a href="https://amlakmal.com" target="_blank" class="btn">Visit Website</a>
+                    </div>
+
+                    <!-- Atrineh Store (Perfume E-commerce) -->
+                    <div class="project-card">
+                        <div class="project-icon"><i class="fas fa-spa"></i></div>
+                        <h3>Atrineh Store</h3>
+                        <p>Premium perfume & decant e-commerce with secure payment and chatbot</p>
+                        <div class="project-tags"><span>WooCommerce</span><span>PHP</span><span>E-commerce</span></div>
+                        <a href="https://atrinehstore.com" target="_blank" class="btn">Visit Website</a>
+                    </div>
+
+                    <!-- Kalastor (AC Parts Store) -->
+                    <div class="project-card">
+                        <div class="project-icon"><i class="fas fa-snowflake"></i></div>
+                        <h3>Kalastor</h3>
+                        <p>Specialized e-commerce for air conditioner parts & industrial components</p>
+                        <div class="project-tags"><span>WooCommerce</span><span>PHP</span><span>Parts</span></div>
+                        <a href="https://kalastor.com" target="_blank" class="btn">Visit Website</a>
+                    </div>
+
+                    <!-- ParsWP (Digital Marketplace) -->
+                    <div class="project-card">
+                        <div class="project-icon"><i class="fas fa-cubes"></i></div>
+                        <h3>ParsWP</h3>
+                        <p>Largest Persian digital marketplace — 200,000+ WordPress themes, plugins & scripts</p>
+                        <div class="project-tags"><span>WordPress</span><span>PHP</span><span>Marketplace</span></div>
+                        <a href="https://parswp.ir" target="_blank" class="btn">Visit Website</a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ===== MOBILE APPS SECTION ===== -->
+            <section class="section" id="mobile-apps">
+                <h2 class="section-title"><span class="highlight">Mobile</span> Applications</h2>
+                <p class="section-intro">
+                    Cross-platform and native mobile applications I've developed, available on the Myket app store.
+                </p>
+
+                <div class="projects-grid">
+                    <!-- Mobile App 1: Zibikar -->
+                    <div class="project-card">
+                        <div class="project-icon"><i class="fas fa-tools"></i></div>
+                        <h3>Zibikar</h3>
+                        <p>Online service marketplace connecting customers with professional technicians</p>
+                        <div class="project-tags"><span>Android</span><span>Cordova</span><span>Services</span></div>
+                        <a href="https://myket.ir/app/org.lotusweb.zibikar" target="_blank" class="btn">View on Myket</a>
+                    </div>
+
+                    <!-- Mobile App 2: Gilan Ahan -->
+                    <div class="project-card">
+                        <div class="project-icon"><i class="fas fa-industry"></i></div>
+                        <h3>Gilan Ahan</h3>
+                        <p>Iran's steel market app — real-time prices, charts, and direct expert consultation</p>
+                        <div class="project-tags"><span>Android</span><span>Cordova</span><span>Market</span></div>
+                        <a href="https://myket.ir/app/com.hooshsystem.gilanahan" target="_blank" class="btn">View on Myket</a>
+                    </div>
+
+                    <!-- Mobile App 3: AmlakMal App -->
+                    <div class="project-card">
+                        <div class="project-icon"><i class="fas fa-building"></i></div>
+                        <h3>AmlakMal App</h3>
+                        <p>Mobile real estate platform — post listings, search properties, connect with sellers</p>
+                        <div class="project-tags"><span>Android</span><span>Cordova</span><span>Real Estate</span></div>
+                        <a href="https://myket.ir/app/ir.parswp.amlakmal" target="_blank" class="btn">View on Myket</a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ===== WHY WORK WITH ME ===== -->
+            <section class="section" id="why-me">
+                <h2 class="section-title">Why <span class="highlight">Work</span> With Me?</h2>
+
+                <div class="why-grid">
+                    <div class="why-item">
+                        <h4><i class="fas fa-cubes" style="color:#78cc6d; margin-right:8px;"></i> Built from the ground up</h4>
+                        <p>I prefer understanding the problem first and building the right architecture instead of forcing every project into an existing template.</p>
+                    </div>
+
+                    <div class="why-item">
+                        <h4><i class="fas fa-layer-group" style="color:#78cc6d; margin-right:8px;"></i> Full-stack thinking</h4>
+                        <p>I can work across the interface, backend, database, APIs, administration panel and deployment environment.</p>
+                    </div>
+
+                    <div class="why-item">
+                        <h4><i class="fas fa-code-branch" style="color:#78cc6d; margin-right:8px;"></i> Practical engineering</h4>
+                        <p>My focus is maintainable code, modular systems, real business requirements and solutions that can evolve with the product.</p>
+                    </div>
+
+                    <div class="why-item">
+                        <h4><i class="fas fa-globe-americas" style="color:#78cc6d; margin-right:8px;"></i> Remote collaboration</h4>
+                        <p>I'm open to working with international teams on freelance, contract or long-term remote development projects.</p>
+                    </div>
+
+                    <div class="why-item">
+                        <h4><i class="fas fa-clock" style="color:#78cc6d; margin-right:8px;"></i> 12+ Years Experience</h4>
+                        <p>Over a decade of hands-on development across industries, delivering 80+ successful projects for clients worldwide.</p>
+                    </div>
+
+                    <div class="why-item">
+                        <h4><i class="fas fa-check-circle" style="color:#78cc6d; margin-right:8px;"></i> Quality &amp; Reliability</h4>
+                        <p>Clean, documented, testable code. I build systems that are easy to maintain, extend, and scale as your business grows.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ===== PORTFOLIO ===== -->
+            <section class="section" id="portfolio">
+                <h2 class="section-title"><span class="highlight">Selected</span> Work</h2>
+
+                <p class="section-intro">
+                    A selection of the kinds of systems and products I develop. The portfolio
+                    is intentionally focused on engineering capability rather than decorative mockups.
+                </p>
+
+                <div class="filters" role="tablist">
+                    <button class="filter active" data-filter="all">All</button>
+                    <button class="filter" data-filter="web">Web</button>
+                    <button class="filter" data-filter="wordpress">WordPress</button>
+                    <button class="filter" data-filter="software">Software</button>
+                    <button class="filter" data-filter="app">Apps</button>
+                </div>
+
+                <div class="project-grid">
+                    <article class="project" data-category="web">
+                        <div class="project-image project-cms">CMS</div>
+                        <div class="project-content">
+                            <span><i class="fas fa-code"></i> Web · PHP</span>
+                            <h3>Custom CMS Platform</h3>
+                            <p>Modular content management and administration architecture with user roles, permissions, and dynamic content types.</p>
+                        </div>
+                    </article>
+
+                    <article class="project" data-category="wordpress">
+                        <div class="project-image project-wordpress">WP</div>
+                        <div class="project-content">
+                            <span><i class="fab fa-wordpress"></i> WordPress · PHP</span>
+                            <h3>Settings Framework</h3>
+                            <p>Reusable settings, fields, repeaters, media and admin components for rapid WordPress development.</p>
+                        </div>
+                    </article>
+
+                    <article class="project" data-category="software">
+                        <div class="project-image project-crm">CRM</div>
+                        <div class="project-content">
+                            <span><i class="fas fa-building"></i> Business Software</span>
+                            <h3>CRM &amp; Business Systems</h3>
+                            <p>Custom workflows, dashboards, tickets and operational tools for enterprise clients.</p>
+                        </div>
+                    </article>
+
+                    <article class="project" data-category="app">
+                        <div class="project-image project-app">APP</div>
+                        <div class="project-content">
+                            <span><i class="fas fa-mobile-alt"></i> Android · Cordova</span>
+                            <h3>Mobile Applications</h3>
+                            <p>Mobile applications connected to backend services, APIs, and real-time databases.</p>
+                        </div>
+                    </article>
+
+                    <article class="project" data-category="web">
+                        <div class="project-image project-api">API</div>
+                        <div class="project-content">
+                            <span><i class="fas fa-plug"></i> API · Integration</span>
+                            <h3>Service Integrations</h3>
+                            <p>External APIs, Firebase, Supabase and real-time communication with WebRTC/Jitsi.</p>
+                        </div>
+                    </article>
+
+                    <article class="project" data-category="wordpress">
+                        <div class="project-image project-commerce">SHOP</div>
+                        <div class="project-content">
+                            <span><i class="fas fa-shopping-cart"></i> WordPress · WooCommerce</span>
+                            <h3>Commerce Solutions</h3>
+                            <p>Custom WooCommerce features, product administration workflows, and payment integrations.</p>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <!-- ===== TECHNICAL SKILLS ===== -->
+            <section class="section" id="skills">
+                <h2 class="section-title"><span class="highlight">Technical</span> Skills</h2>
+
+                <div class="skills-layout">
+                    <div>
+                        <h3><i class="fas fa-laptop-code"></i> Languages &amp; Core Technologies</h3>
+
+                        <div class="skill">
+                            <div class="skill-head"><span>PHP</span><strong>Advanced</strong></div>
+                            <div class="skill-bar"><span style="--value:95%"></span></div>
                         </div>
 
-                        <div>
-                            <h3>Full-stack thinking</h3>
-                            <p>
-                                I can work across the interface, backend, database, APIs,
-                                administration panel and deployment environment.
-                            </p>
+                        <div class="skill">
+                            <div class="skill-head"><span>HTML / CSS</span><strong>Advanced</strong></div>
+                            <div class="skill-bar"><span style="--value:95%"></span></div>
                         </div>
 
-                        <div>
-                            <h3>Practical engineering</h3>
-                            <p>
-                                My focus is maintainable code, modular systems, real business
-                                requirements and solutions that can evolve with the product.
-                            </p>
+                        <div class="skill">
+                            <div class="skill-head"><span>JavaScript / jQuery</span><strong>Advanced</strong></div>
+                            <div class="skill-bar"><span style="--value:88%"></span></div>
                         </div>
 
-                        <div>
-                            <h3>Remote collaboration</h3>
-                            <p>
-                                I'm open to working with international teams on freelance,
-                                contract or long-term remote development projects.
-                            </p>
+                        <div class="skill">
+                            <div class="skill-head"><span>Python</span><strong>Strong</strong></div>
+                            <div class="skill-bar"><span style="--value:82%"></span></div>
+                        </div>
+
+                        <div class="skill">
+                            <div class="skill-head"><span>MySQL / MariaDB</span><strong>Strong</strong></div>
+                            <div class="skill-bar"><span style="--value:90%"></span></div>
                         </div>
                     </div>
-                </section>
 
-                <section class="card" id="contact">
-                    <h2 class="section-title">Let's Build Something</h2>
+                    <div>
+                        <h3><i class="fas fa-cogs"></i> Platforms &amp; Development</h3>
+                        <ul class="check-list">
+                            <li>WordPress theme &amp; plugin development</li>
+                            <li>Custom CMS and admin panels</li>
+                            <li>REST APIs, AJAX and integrations</li>
+                            <li>WooCommerce development</li>
+                            <li>Android application development</li>
+                            <li>Desktop software development / .NET</li>
+                            <li>Firebase and Supabase integrations</li>
+                            <li>WebRTC / Jitsi integrations</li>
+                            <li>Server administration and hosting environments</li>
+                            <li>Responsive UI with HTML, CSS and JavaScript</li>
+                        </ul>
+                    </div>
+                </div>
 
-                    <p class="contact-intro">
-                        If you're looking for a developer who can take an idea from requirements
-                        to a working product, I'd be happy to discuss your project.
-                    </p>
+                <div class="technology-tags">
+                    <span>PHP</span><span>Python</span><span>JavaScript</span>
+                    <span>HTML</span><span>CSS</span><span>MySQL</span>
+                    <span>MariaDB</span><span>WordPress</span><span>WooCommerce</span>
+                    <span>Android</span><span>.NET</span><span>Firebase</span>
+                    <span>Supabase</span><span>REST API</span><span>AJAX</span>
+                    <span>Git</span><span>Linux</span>
+                </div>
+            </section>
 
-                    <div class="contact-grid">
-                        <div class="contact-details">
-                            <a href="mailto:chehresay@gmail.com">
-                                <span>Email</span>
-                                <strong>chehresay@gmail.com</strong>
-                            </a>
-
-                            <a href="https://github.com/chehresay" target="_blank" rel="noopener">
-                                <span>GitHub</span>
-                                <strong>github.com/chehresay</strong>
-                            </a>
-
-                            <a href="https://linkedin.com/in/chehresay" target="_blank" rel="noopener">
-                                <span>LinkedIn</span>
-                                <strong>linkedin.com/in/chehresay</strong>
-                            </a>
-
-                            <a href="https://t.me/chehresay" target="_blank" rel="noopener">
-                                <span>Telegram</span>
-                                <strong>@chehresay</strong>
-                            </a>
-
-                            <a href="https://wa.me/989117040969" target="_blank" rel="noopener">
-                                <span>WhatsApp</span>
-                                <strong>+98 911 704 0969</strong>
-                            </a>
+            <!-- ===== RESUME ===== -->
+            <section class="section" id="resume">
+                <h2 class="section-title"><span class="highlight">Resume</span></h2>
+                <div class="grid-2">
+                    <div>
+                        <h3 style="margin-bottom:20px; font-size:20px;"><i class="fas fa-briefcase" style="color:#78cc6d;"></i> Experience</h3>
+                        <div class="resume-item">
+                            <div class="resume-date">2014 – Present</div>
+                            <div class="resume-detail">
+                                <h4>Senior Full-Stack Developer</h4>
+                                <div class="company">Freelance / Remote</div>
+                                <p>Leading development teams on complex web projects. Building scalable applications with PHP, WordPress, Python, and Node.js. Implementing API integrations and cloud solutions. 80+ projects delivered worldwide.</p>
+                            </div>
                         </div>
-
-                        <div class="contact-cta">
-                            <p>Have a project, product or development challenge?</p>
-                            <a class="button button-primary" href="mailto:chehresay@gmail.com?subject=Project%20Inquiry">Start a Conversation</a>
+                        <div class="resume-item">
+                            <div class="resume-date">2010 – 2014</div>
+                            <div class="resume-detail">
+                                <h4>Lead Developer</h4>
+                                <div class="company">Digital Agency</div>
+                                <p>Developed custom WordPress themes and plugins. Built enterprise-level CMS platforms. Optimized website performance and SEO. Managed client relationships and project delivery.</p>
+                            </div>
+                        </div>
+                        <div class="resume-item">
+                            <div class="resume-date">2008 – 2010</div>
+                            <div class="resume-detail">
+                                <h4>Software Developer</h4>
+                                <div class="company">Tech Startup</div>
+                                <p>Built and maintained web applications using PHP, JavaScript, and MySQL. Contributed to product development and team collaboration.</p>
+                            </div>
                         </div>
                     </div>
-                </section>
-            </main>
+                    <div>
+                        <h3 style="margin-bottom:20px; font-size:20px;"><i class="fas fa-university" style="color:#78cc6d;"></i> Education &amp; Certifications</h3>
+                        <div class="resume-item">
+                            <div class="resume-date">2020</div>
+                            <div class="resume-detail">
+                                <h4>Advanced Web Development</h4>
+                                <div class="company">Online Course</div>
+                                <p>Advanced PHP, Python, JavaScript frameworks, and modern development practices.</p>
+                            </div>
+                        </div>
+                        <div class="resume-item">
+                            <div class="resume-date">2018</div>
+                            <div class="resume-detail">
+                                <h4>WordPress Development</h4>
+                                <div class="company">Bootcamp</div>
+                                <p>Custom theme and plugin development, WooCommerce, and API integrations.</p>
+                            </div>
+                        </div>
+                        <div class="resume-item">
+                            <div class="resume-date">2006 – 2010</div>
+                            <div class="resume-detail">
+                                <h4>Computer Science Bachelor</h4>
+                                <div class="company">University</div>
+                                <p>Software engineering, algorithms, data structures, and database systems.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
 
-            <footer>
-                <p>© 2026 Morad Chehresay. Built with HTML, CSS & JavaScript.</p>
-            </footer>
-        </div>
+            <!-- ===== CONTACT ===== -->
+            <section class="section" id="contact">
+                <h2 class="section-title">Get in <span class="highlight">Touch</span></h2>
+
+                <p style="font-size:15px; color:#666; margin-bottom:25px;">
+                    If you're looking for a developer who can take an idea from requirements to a working product, I'd be happy to discuss your project.
+                </p>
+
+                <div class="grid-2">
+                    <div>
+                        <ul class="contact-info">
+                            <li><i class="fas fa-envelope"></i> <a href="mailto:chehresay@gmail.com">chehresay@gmail.com</a></li>
+                            <li><i class="fab fa-github"></i> <a href="https://github.com/chehresay" target="_blank">github.com/chehresay</a></li>
+                            <li><i class="fab fa-linkedin-in"></i> <a href="https://linkedin.com/in/chehresay" target="_blank">linkedin.com/in/chehresay</a></li>
+                            <li><i class="fab fa-telegram-plane"></i> <a href="https://t.me/chehresay" target="_blank">@chehresay</a></li>
+                            <li><i class="fab fa-whatsapp"></i> <a href="https://wa.me/989117040969" target="_blank">+98 911 704 0969</a></li>
+                            <li><i class="fas fa-map-marker-alt"></i> Iran (Remote / Worldwide)</li>
+                        </ul>
+                        <br />
+                        <p style="font-size:14px; color:#666;"><i class="fas fa-clock" style="color:#78cc6d;"></i> Available: 24/7 for urgent inquiries</p>
+                    </div>
+                    <div>
+                        <form class="contact-form" id="contactForm" action="mailto:chehresay@gmail.com" method="post" enctype="text/plain">
+                            <input type="text" name="Full Name" placeholder="Full Name" required />
+                            <input type="email" name="Email" placeholder="Email Address" required />
+                            <input type="text" name="Subject" placeholder="Subject" />
+                            <textarea name="Message" placeholder="Tell me about your project..." required></textarea>
+                            <button type="submit" class="btn-submit"><i class="fas fa-paper-plane"></i> Send Message</button>
+                        </form>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ===== FOOTER ===== -->
+            <div class="footer">
+                <p>&copy; 2026 Morad Chehresay — Built with <i class="fas fa-heart"></i> &amp; <i class="fas fa-code"></i></p>
+            </div>
+
+        </main>
     </div>
 
-    <button class="theme-toggle" type="button" aria-label="Toggle dark mode">◐</button>
-    <script src="main.js"></script>
+    <script>
+        // ===== Portfolio Filter =====
+        const filters = document.querySelectorAll('.filter');
+        const projects = document.querySelectorAll('.project');
+
+        filters.forEach(filter => {
+            filter.addEventListener('click', function() {
+                filters.forEach(f => f.classList.remove('active'));
+                this.classList.add('active');
+
+                const category = this.dataset.filter;
+
+                projects.forEach(project => {
+                    if (category === 'all' || project.dataset.category === category) {
+                        project.classList.remove('project-hidden');
+                    } else {
+                        project.classList.add('project-hidden');
+                    }
+                });
+            });
+        });
+
+        // ===== Download CV =====
+        document.getElementById('downloadCvBtn').addEventListener('click', function(e) {
+            e.preventDefault();            
+            const pdfUrl = 'Chehresay_CV.pdf';            
+            window.open(pdfUrl, '_blank');
+        });
+    </script>
 </body>
 </html>
