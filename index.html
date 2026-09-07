@@ -1,116 +1,399 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Morad Chehresay - Portfolio</title>
-    <link rel="stylesheet" href="style.css" />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Morad Chehresay — Software Developer specializing in PHP, Python, WordPress, custom CMS, web applications and business software.">
+    <meta name="author" content="Morad Chehresay">
+    <title>Morad Chehresay — Software Developer</title>
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-    <div class="container">
-        <!-- هدر -->
-        <header>
-            <div class="profile">
-                <img src="https://avatars.githubusercontent.com/chehresay" alt="Profile" class="avatar" />
+    <div class="page-shell">
+
+        <aside class="profile-card">
+            <div class="profile-cover"></div>
+
+            <div class="profile-content">
+                <div class="profile-photo">
+                    <img src="assets/images/profile.jpg" alt="Morad Chehresay">
+                </div>
+
                 <h1>Morad Chehresay</h1>
-                <p class="title">Full-Stack Developer &amp; WordPress Expert</p>
-            </div>
-            <div class="social-links">
-                <a href="https://github.com/chehresay" target="_blank"><i class="fab fa-github"></i></a>
-                <a href="https://linkedin.com/in/chehresay" target="_blank"><i class="fab fa-linkedin"></i></a>
-                <a href="https://t.me/chehresay" target="_blank"><i class="fab fa-telegram"></i></a>
-                <a href="mailto:chehresay@gmail.com"><i class="fas fa-envelope"></i></a>
-            </div>
-        </header>
+                <p class="profile-role">Software Developer</p>
+                <p class="profile-specialty">PHP · Python · Web · CMS · Custom Software</p>
 
-        <!-- درباره من -->
-        <section class="about">
-            <h2>👨‍💻 About Me</h2>
-            <p>
-                I'm a passionate Full-Stack Developer with over 5 years of experience in
-                <strong>WordPress</strong>, <strong>Python</strong>, and <strong>JavaScript</strong>.
-                I love building clean, efficient, and user-friendly applications.
-            </p>
-        </section>
-
-        <!-- مهارت‌ها -->
-        <section class="skills">
-            <h2>🛠️ Skills</h2>
-            <div class="skills-grid">
-                <span class="skill-tag">WordPress</span>
-                <span class="skill-tag">PHP</span>
-                <span class="skill-tag">Python</span>
-                <span class="skill-tag">JavaScript</span>
-                <span class="skill-tag">React</span>
-                <span class="skill-tag">Node.js</span>
-                <span class="skill-tag">Git &amp; GitHub</span>
-                <span class="skill-tag">Docker</span>
-                <span class="skill-tag">MySQL</span>
-                <span class="skill-tag">REST API</span>
-                <span class="skill-tag">Eel</span>
-                <span class="skill-tag">HTML &amp; CSS</span>
-            </div>
-        </section>
-
-        <!-- پروژه‌ها -->
-        <section class="projects">
-            <h2>📁 Featured Projects</h2>
-            <div class="projects-grid">
-                <div class="project-card">
-                    <div class="project-icon"><i class="fas fa-robot"></i></div>
-                    <h3>ZenBTC</h3>
-                    <p>Professional Bitcoin Trading Bot with Advanced 5-Indicator Strategy</p>
-                    <div class="project-tags">
-                        <span>Python</span>
-                        <span>Eel</span>
-                        <span>Trading</span>
-                    </div>
-                    <a href="https://github.com/chehresay/zen-btc-bot" target="_blank" class="btn">View Project</a>
+                <div class="social-links">
+                    <a href="https://github.com/chehresay" target="_blank" rel="noopener" aria-label="GitHub">GH</a>
+                    <a href="https://linkedin.com/in/chehresay" target="_blank" rel="noopener" aria-label="LinkedIn">in</a>
+                    <a href="https://t.me/chehresay" target="_blank" rel="noopener" aria-label="Telegram">TG</a>
+                    <a href="https://wa.me/989117040969" target="_blank" rel="noopener" aria-label="WhatsApp">WA</a>
                 </div>
 
-                <div class="project-card">
-                    <div class="project-icon"><i class="fab fa-wordpress"></i></div>
-                    <h3>Persian Framework</h3>
-                    <p>Advanced WordPress Options Framework with 40+ Professional Fields</p>
-                    <div class="project-tags">
-                        <span>WordPress</span>
-                        <span>PHP</span>
-                        <span>Framework</span>
-                    </div>
-                    <a href="https://github.com/chehresay/persian-framework" target="_blank" class="btn">View Project</a>
+                <div class="profile-info">
+                    <div><span>Focus</span><strong>Software & Web</strong></div>
+                    <div><span>Specialty</span><strong>PHP / Python</strong></div>
+                    <div><span>WordPress</span><strong>Custom Development</strong></div>
+                    <div><span>Work</span><strong>Remote</strong></div>
                 </div>
 
-                <div class="project-card">
-                    <div class="project-icon"><i class="fas fa-mobile-alt"></i></div>
-                    <h3>Cordova Pro GUI</h3>
-                    <p>Professional Cordova Project Management Tool with Modern UI</p>
-                    <div class="project-tags">
-                        <span>Python</span>
-                        <span>Eel</span>
-                        <span>Cordova</span>
+                <a class="button button-primary full-width" href="mailto:chehresay@gmail.com">Let's Work Together</a>
+            </div>
+        </aside>
+
+        <div class="main-column">
+            <nav class="top-navigation" aria-label="Main navigation">
+                <a class="active" href="#about">About</a>
+                <a href="#services">Services</a>
+                <a href="#resume">Resume</a>
+                <a href="#skills">Skills</a>
+                <a href="#portfolio">Portfolio</a>
+                <a href="#contact">Contact</a>
+            </nav>
+
+            <main>
+                <section class="card hero-section" id="about">
+                    <p class="eyebrow">SOFTWARE DEVELOPER · AVAILABLE FOR REMOTE COLLABORATION</p>
+                    <h2>Building practical software, scalable web systems and custom digital products.</h2>
+
+                    <p class="hero-text">
+                        I'm Morad Chehresay, a software developer focused on PHP and Python,
+                        modern web development, WordPress engineering and custom business software.
+                        I enjoy building systems from the ground up — from the database and backend
+                        to the admin panel, APIs and user interface.
+                    </p>
+
+                    <p>
+                        My work combines product thinking with hands-on engineering. I build custom
+                        CMS platforms, WordPress themes and plugins, administration panels, CRM-style
+                        systems, web applications, Android applications and desktop software.
+                    </p>
+
+                    <div class="hero-actions">
+                        <a class="button button-primary" href="#portfolio">View My Work</a>
+                        <a class="button button-secondary" href="mailto:chehresay@gmail.com">Contact Me</a>
                     </div>
-                    <a href="https://github.com/chehresay/cordova-pro-gui" target="_blank" class="btn">View Project</a>
-                </div>
-            </div>
-        </section>
+                </section>
 
-        <!-- تماس -->
-        <section class="contact">
-            <h2>📬 Get in Touch</h2>
-            <p>Feel free to reach out for collaborations or just a chat!</p>
-            <div class="contact-links">
-                <a href="mailto:chehresay@gmail.com" class="btn btn-primary">
-                    <i class="fas fa-envelope"></i> chehresay@gmail.com
-                </a>
-            </div>
-        </section>
+                <section class="card" id="services">
+                    <h2 class="section-title">What I Can Build</h2>
 
-        <!-- فوتر -->
-        <footer>
-            <p>&copy; 2026 Morad Chehresay. Built with ❤️ on GitHub Pages</p>
-        </footer>
+                    <div class="service-grid">
+                        <article class="service">
+                            <span class="service-icon">&lt;/&gt;</span>
+                            <h3>Web Applications</h3>
+                            <p>
+                                Custom PHP and Python web applications with structured backend logic,
+                                responsive interfaces, database integration and APIs.
+                            </p>
+                        </article>
+
+                        <article class="service">
+                            <span class="service-icon">WP</span>
+                            <h3>WordPress Engineering</h3>
+                            <p>
+                                Custom themes, plugins, settings frameworks, admin interfaces,
+                                AJAX features, WooCommerce integrations and performance-focused solutions.
+                            </p>
+                        </article>
+
+                        <article class="service">
+                            <span class="service-icon">CMS</span>
+                            <h3>Custom CMS & Admin Panels</h3>
+                            <p>
+                                Modular content management systems and administration panels designed
+                                around the actual workflow of a business.
+                            </p>
+                        </article>
+
+                        <article class="service">
+                            <span class="service-icon">CRM</span>
+                            <h3>Business Systems</h3>
+                            <p>
+                                CRM-style systems, ticketing, reservations, dashboards, automation,
+                                customer workflows and internal business tools.
+                            </p>
+                        </article>
+
+                        <article class="service">
+                            <span class="service-icon">APP</span>
+                            <h3>Mobile & Desktop</h3>
+                            <p>
+                                Android applications and desktop software, including integrations
+                                between applications, APIs and business databases.
+                            </p>
+                        </article>
+
+                        <article class="service">
+                            <span class="service-icon">API</span>
+                            <h3>API & Integrations</h3>
+                            <p>
+                                REST APIs and integrations with external services, Firebase,
+                                Supabase, payment/service APIs and real-time communication tools.
+                            </p>
+                        </article>
+                    </div>
+                </section>
+
+                <section class="card" id="resume">
+                    <h2 class="section-title">Experience & Approach</h2>
+
+                    <div class="timeline">
+                        <article class="timeline-item">
+                            <span class="timeline-date">CURRENT</span>
+                            <h3>Independent Software Development</h3>
+                            <p class="timeline-company">Web · CMS · WordPress · Business Software</p>
+                            <p>
+                                Designing and developing custom software products, WordPress
+                                extensions, CMS platforms, administration systems and integrations.
+                            </p>
+                        </article>
+
+                        <article class="timeline-item">
+                            <span class="timeline-date">ONGOING</span>
+                            <h3>Custom WordPress Engineering</h3>
+                            <p class="timeline-company">Themes · Plugins · Admin Frameworks</p>
+                            <p>
+                                Building modular settings frameworks, custom fields, repeaters,
+                                media interfaces, AJAX workflows, WooCommerce features and
+                                reusable WordPress components.
+                            </p>
+                        </article>
+
+                        <article class="timeline-item">
+                            <span class="timeline-date">ONGOING</span>
+                            <h3>Product & Business Systems</h3>
+                            <p class="timeline-company">CMS · CRM · Dashboards · Automation</p>
+                            <p>
+                                Developing systems that connect frontend interfaces, backend logic,
+                                databases, APIs and operational workflows into one maintainable product.
+                            </p>
+                        </article>
+                    </div>
+                </section>
+
+                <section class="card" id="skills">
+                    <h2 class="section-title">Technical Skills</h2>
+
+                    <div class="skills-layout">
+                        <div>
+                            <h3>Languages & Core Technologies</h3>
+
+                            <div class="skill">
+                                <div class="skill-head"><span>PHP</span><strong>Advanced</strong></div>
+                                <div class="skill-bar"><span style="--value:95%"></span></div>
+                            </div>
+
+                            <div class="skill">
+                                <div class="skill-head"><span>HTML / CSS</span><strong>Advanced</strong></div>
+                                <div class="skill-bar"><span style="--value:95%"></span></div>
+                            </div>
+
+                            <div class="skill">
+                                <div class="skill-head"><span>JavaScript / jQuery</span><strong>Advanced</strong></div>
+                                <div class="skill-bar"><span style="--value:88%"></span></div>
+                            </div>
+
+                            <div class="skill">
+                                <div class="skill-head"><span>Python</span><strong>Strong</strong></div>
+                                <div class="skill-bar"><span style="--value:82%"></span></div>
+                            </div>
+
+                            <div class="skill">
+                                <div class="skill-head"><span>MySQL / MariaDB</span><strong>Strong</strong></div>
+                                <div class="skill-bar"><span style="--value:90%"></span></div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <h3>Platforms & Development</h3>
+                            <ul class="check-list">
+                                <li>WordPress theme & plugin development</li>
+                                <li>Custom CMS and admin panels</li>
+                                <li>REST APIs, AJAX and integrations</li>
+                                <li>WooCommerce development</li>
+                                <li>Android application development</li>
+                                <li>Desktop software development / .NET</li>
+                                <li>Firebase and Supabase integrations</li>
+                                <li>WebRTC / Jitsi integrations</li>
+                                <li>Server administration and hosting environments</li>
+                                <li>Responsive UI with HTML, CSS and JavaScript</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="technology-tags">
+                        <span>PHP</span><span>Python</span><span>JavaScript</span>
+                        <span>HTML</span><span>CSS</span><span>MySQL</span>
+                        <span>MariaDB</span><span>WordPress</span><span>WooCommerce</span>
+                        <span>Android</span><span>.NET</span><span>Firebase</span>
+                        <span>Supabase</span><span>REST API</span><span>AJAX</span>
+                        <span>Git</span><span>Linux</span>
+                    </div>
+                </section>
+
+                <section class="card" id="portfolio">
+                    <h2 class="section-title">Selected Work</h2>
+
+                    <p class="section-intro">
+                        A selection of the kinds of systems and products I develop. The portfolio
+                        is intentionally focused on engineering capability rather than decorative mockups.
+                    </p>
+
+                    <div class="filters" role="tablist">
+                        <button class="filter active" data-filter="all">All</button>
+                        <button class="filter" data-filter="web">Web</button>
+                        <button class="filter" data-filter="wordpress">WordPress</button>
+                        <button class="filter" data-filter="software">Software</button>
+                        <button class="filter" data-filter="app">Apps</button>
+                    </div>
+
+                    <div class="project-grid">
+                        <article class="project" data-category="web">
+                            <div class="project-image project-cms">CMS</div>
+                            <div class="project-content">
+                                <span>Web · PHP</span>
+                                <h3>Custom CMS Platform</h3>
+                                <p>Modular content management and administration architecture.</p>
+                            </div>
+                        </article>
+
+                        <article class="project" data-category="wordpress">
+                            <div class="project-image project-wordpress">WP</div>
+                            <div class="project-content">
+                                <span>WordPress · PHP</span>
+                                <h3>Settings Framework</h3>
+                                <p>Reusable settings, fields, repeaters, media and admin components.</p>
+                            </div>
+                        </article>
+
+                        <article class="project" data-category="software">
+                            <div class="project-image project-crm">CRM</div>
+                            <div class="project-content">
+                                <span>Business Software</span>
+                                <h3>CRM & Business Systems</h3>
+                                <p>Custom workflows, dashboards, tickets and operational tools.</p>
+                            </div>
+                        </article>
+
+                        <article class="project" data-category="app">
+                            <div class="project-image project-app">APP</div>
+                            <div class="project-content">
+                                <span>Android · Cordova</span>
+                                <h3>Mobile Applications</h3>
+                                <p>Mobile applications connected to backend services and APIs.</p>
+                            </div>
+                        </article>
+
+                        <article class="project" data-category="web">
+                            <div class="project-image project-api">API</div>
+                            <div class="project-content">
+                                <span>API · Integration</span>
+                                <h3>Service Integrations</h3>
+                                <p>External APIs, Firebase, Supabase and real-time communication.</p>
+                            </div>
+                        </article>
+
+                        <article class="project" data-category="wordpress">
+                            <div class="project-image project-commerce">SHOP</div>
+                            <div class="project-content">
+                                <span>WordPress · WooCommerce</span>
+                                <h3>Commerce Solutions</h3>
+                                <p>Custom WooCommerce features and product administration workflows.</p>
+                            </div>
+                        </article>
+                    </div>
+                </section>
+
+                <section class="card why-section">
+                    <h2 class="section-title">Why Work With Me?</h2>
+
+                    <div class="why-grid">
+                        <div>
+                            <h3>Built from the ground up</h3>
+                            <p>
+                                I prefer understanding the problem first and building the right
+                                architecture instead of forcing every project into an existing template.
+                            </p>
+                        </div>
+
+                        <div>
+                            <h3>Full-stack thinking</h3>
+                            <p>
+                                I can work across the interface, backend, database, APIs,
+                                administration panel and deployment environment.
+                            </p>
+                        </div>
+
+                        <div>
+                            <h3>Practical engineering</h3>
+                            <p>
+                                My focus is maintainable code, modular systems, real business
+                                requirements and solutions that can evolve with the product.
+                            </p>
+                        </div>
+
+                        <div>
+                            <h3>Remote collaboration</h3>
+                            <p>
+                                I'm open to working with international teams on freelance,
+                                contract or long-term remote development projects.
+                            </p>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="card" id="contact">
+                    <h2 class="section-title">Let's Build Something</h2>
+
+                    <p class="contact-intro">
+                        If you're looking for a developer who can take an idea from requirements
+                        to a working product, I'd be happy to discuss your project.
+                    </p>
+
+                    <div class="contact-grid">
+                        <div class="contact-details">
+                            <a href="mailto:chehresay@gmail.com">
+                                <span>Email</span>
+                                <strong>chehresay@gmail.com</strong>
+                            </a>
+
+                            <a href="https://github.com/chehresay" target="_blank" rel="noopener">
+                                <span>GitHub</span>
+                                <strong>github.com/chehresay</strong>
+                            </a>
+
+                            <a href="https://linkedin.com/in/chehresay" target="_blank" rel="noopener">
+                                <span>LinkedIn</span>
+                                <strong>linkedin.com/in/chehresay</strong>
+                            </a>
+
+                            <a href="https://t.me/chehresay" target="_blank" rel="noopener">
+                                <span>Telegram</span>
+                                <strong>@chehresay</strong>
+                            </a>
+
+                            <a href="https://wa.me/989117040969" target="_blank" rel="noopener">
+                                <span>WhatsApp</span>
+                                <strong>+98 911 704 0969</strong>
+                            </a>
+                        </div>
+
+                        <div class="contact-cta">
+                            <p>Have a project, product or development challenge?</p>
+                            <a class="button button-primary" href="mailto:chehresay@gmail.com?subject=Project%20Inquiry">Start a Conversation</a>
+                        </div>
+                    </div>
+                </section>
+            </main>
+
+            <footer>
+                <p>© 2026 Morad Chehresay. Built with HTML, CSS & JavaScript.</p>
+            </footer>
+        </div>
     </div>
+
+    <button class="theme-toggle" type="button" aria-label="Toggle dark mode">◐</button>
+    <script src="assets/js/main.js"></script>
 </body>
 </html>
