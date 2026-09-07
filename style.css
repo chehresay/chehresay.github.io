@@ -1,0 +1,234 @@
+/* ========== RESET ========== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    background: #f8f9fa;
+    color: #1a1a2e;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+/* ========== HEADER ========== */
+header {
+    text-align: center;
+    padding: 40px 0 30px;
+}
+
+.profile .avatar {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: 4px solid #dc3545;
+    object-fit: cover;
+}
+
+.profile h1 {
+    font-size: 32px;
+    font-weight: 900;
+    margin-top: 16px;
+}
+
+.profile .title {
+    font-size: 18px;
+    color: #6c757d;
+    font-weight: 400;
+}
+
+.social-links {
+    margin-top: 16px;
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+}
+
+.social-links a {
+    color: #6c757d;
+    font-size: 24px;
+    transition: 0.3s;
+}
+.social-links a:hover {
+    color: #dc3545;
+    transform: translateY(-2px);
+}
+
+/* ========== SECTIONS ========== */
+section {
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 30px;
+    margin-bottom: 24px;
+    box-shadow: 0 2px 16px rgba(0, 0, 0, 0.06);
+    border: 1px solid #e9ecef;
+}
+
+section h2 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 16px;
+    color: #1a1a2e;
+}
+
+.about p {
+    font-size: 16px;
+    color: #495057;
+    line-height: 1.8;
+}
+
+/* ========== SKILLS ========== */
+.skills-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.skill-tag {
+    background: #f1f3f5;
+    color: #1a1a2e;
+    padding: 6px 16px;
+    border-radius: 50px;
+    font-size: 14px;
+    font-weight: 500;
+    border: 1px solid #e9ecef;
+    transition: 0.3s;
+}
+.skill-tag:hover {
+    background: #dc3545;
+    color: #fff;
+    border-color: #dc3545;
+}
+
+/* ========== PROJECTS ========== */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.project-card {
+    background: #f8f9fa;
+    border-radius: 12px;
+    padding: 20px;
+    text-align: center;
+    border: 1px solid #e9ecef;
+    transition: 0.3s;
+}
+.project-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    border-color: #dc3545;
+}
+
+.project-icon {
+    font-size: 36px;
+    color: #dc3545;
+    margin-bottom: 12px;
+}
+
+.project-card h3 {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.project-card p {
+    font-size: 14px;
+    color: #6c757d;
+    margin-bottom: 12px;
+}
+
+.project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    justify-content: center;
+    margin-bottom: 12px;
+}
+
+.project-tags span {
+    background: #e9ecef;
+    color: #495057;
+    padding: 2px 12px;
+    border-radius: 50px;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.btn {
+    display: inline-block;
+    padding: 8px 20px;
+    background: #dc3545;
+    color: #fff;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 14px;
+    transition: 0.3s;
+}
+.btn:hover {
+    background: #c82333;
+    transform: scale(1.02);
+}
+
+.btn-primary {
+    background: #1a1a2e;
+}
+.btn-primary:hover {
+    background: #2d2d5e;
+}
+
+/* ========== CONTACT ========== */
+.contact {
+    text-align: center;
+}
+
+.contact p {
+    color: #6c757d;
+    margin-bottom: 16px;
+}
+
+.contact-links {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+/* ========== FOOTER ========== */
+footer {
+    text-align: center;
+    padding: 20px 0;
+    color: #6c757d;
+    font-size: 14px;
+    border-top: 1px solid #e9ecef;
+    margin-top: 12px;
+}
+
+/* ========== RESPONSIVE ========== */
+@media (max-width: 600px) {
+    .container {
+        padding: 20px 12px;
+    }
+    section {
+        padding: 20px;
+    }
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+    .profile .avatar {
+        width: 80px;
+        height: 80px;
+    }
+    .profile h1 {
+        font-size: 24px;
+    }
+}
